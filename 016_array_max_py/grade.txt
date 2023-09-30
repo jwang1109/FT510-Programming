@@ -1,0 +1,25 @@
+Grading at 09/05/2022:21:01:03.740445
+For commit ID 998d67f6ca31ac4849a8c614b46e318814c2da88
+Grading at Mon Sep  5 05:01:03 PM EDT 2022
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+Grading at Mon Sep 05 17:01:03  2022
+[77, 33, 19, 99, 42, 6, 27, 4]: 99
+[-3, -42, -99, -1000, -999, -88, -77]: -3
+[425, 59, -3, 77, 0, 36]: 425
+string passed: None
+[]: None
+['string']: None
+[45.2, 'string', 3, 0, 'test']: 45.2
+Passed: []
+Passed: [77, 33, 19, 99, 42, 6, 27, 4]
+Passed: [45.2, 'string', 3, 0, 'test']
+Passed: ['string']
+Passed: [425, 59, -3, 77, 0, 36]
+Passed: [-3, -42, -99, -1000, -999, -88, -77]
+Passed: string passed
+
+Overall Grade: PASSED
