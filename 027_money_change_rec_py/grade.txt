@@ -1,0 +1,24 @@
+Grading at 09/14/2022:21:20:21.289973
+For commit ID 4a76657d418087743d70e950ebaa271cb60ceeaa
+Grading at Wed Sep 14 05:20:21 PM EDT 2022
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+Grading at Wed Sep 14 17:20:21  2022
+SCORE: 90.0
+Found doc string:
+
+    for a given amount, returns a dictionary containing the smallest number of bills and
+    coins that add up to that number.
+    
+Found doc string:
+
+    function print_change that prints the 
+    change in order of the descending denomination and their corresponding amount.
+    The parameter to this function will be the dictionary that is the result
+    of make_change.
+    
+
+Overall Grade: PASSED
