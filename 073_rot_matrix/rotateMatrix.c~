@@ -1,0 +1,48 @@
+#include<stdlib.h>
+#include<stdio.h>
+
+void rotate(char ** mat){
+  char temp;
+  for(int i = 0; i < 10; i++){
+    for(int j = 0; j < 10; j++){
+      temp = mat[i][j];
+      mat[j][10-i] = mat[i][j];
+      mat[i][j] = temp;
+    }
+  }
+}
+
+void printMatrix(char ** mat){
+  for(int i = 0; i < 10; i++){
+    for(int j = 0; j < 10; j++){
+      printf(mat[i][j]);}
+    printf("\n");
+  }
+}
+
+int main(int argc, char ** argv){
+  if (argc !=2 ){
+    fprintf(stderr,"Usage: rotateMatrix arg");
+    return EXIT_FAILURE;
+  }
+  FILE * f = fopen(argv[1],"r");
+  if (f == NULL){
+    perror("File doesn't exist");
+    return EXIT_FAILURE;
+  }
+  char matrix[10][10];
+  char line[10];
+  while(fgets(line,10,f) != NULL){
+    int i == 0;//i = ith row
+    if (line[10] == '\n'){
+      for(int j = 0; j < n; j++){
+	matrix[i][j] = line[i][j];}
+      }
+    else{
+      printf("");
+    }
+    i++;
+  }
+  rotate(matrix);
+  printf(matrix);
+}
