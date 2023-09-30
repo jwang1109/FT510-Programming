@@ -1,0 +1,125 @@
+Grading at 12/12/2022:20:04:59.305829
+For commit ID 18979ee4ac6459c924468676be6dbb2604d59906
+Grading at Mon Dec 12 03:04:26 PM EST 2022
+rm -f *.o  *~ efficient_frontier
+g++ -c --std=c++11 -pedantic -Wall -Werror -ggdb3 main.cpp
+g++ -c --std=c++11 -pedantic -Wall -Werror -ggdb3 Assets.cpp
+g++ -o efficient_frontier --std=c++11 -pedantic -Wall -Werror -ggdb3 main.o Assets.o
++-----------------------------------------------------------------------+
+Test case 1
+Usage: -r(optional) universe.csv correlation.csv
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 2
+RoR,volatility
+1.0%,0.78%
+2.0%,1.09%
+3.0%,1.59%
+4.0%,2.13%
+5.0%,2.71%
+6.0%,3.29%
+7.0%,3.88%
+8.0%,4.47%
+9.0%,5.07%
+10.0%,5.67%
+11.0%,6.27%
+12.0%,6.86%
+13.0%,7.46%
+14.0%,8.06%
+15.0%,8.67%
+16.0%,9.27%
+17.0%,9.87%
+18.0%,10.47%
+19.0%,11.07%
+20.0%,11.67%
+21.0%,12.28%
+22.0%,12.88%
+23.0%,13.48%
+24.0%,14.08%
+25.0%,14.69%
+26.0%,15.29%
+Your program did not indicate a failure case
+                                                         [0/2]
++-----------------------------------------------------------------------+
+Test case 3
+Failure to open universe file
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 4
+Failure to open correlation file
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 5
+Universe file error: Formatting error(should be: name,ror,sd)||Wrong number of columns
+Your program successfully indicated a failure case
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 6
+Correlation file error:Formatting error||Wrong number of columns
+Your program successfully indicated a failure case
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 7
+Correlation file error: Empty file||Wrong number of rows
+Your program successfully indicated a failure case
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 8
+Universe data can't be converted to double
+Your program successfully indicated a failure case
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 9
+Correlation data can't be converted to double
+Your program successfully indicated a failure case
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 10
+Correlation math error: Symmetry||1 on Diagnal||-1 <=corrleation <= 1Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 11
+Your file matched the expected output
+                                                         [40/40]
++-----------------------------------------------------------------------+
+Test case 12
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 13
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 14
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 15
+Your file matched the expected output
+                                                         [5/5]
+========================================================================
+Restricted test cases for bonus points
+========================================================================
++-----------------------------------------------------------------------+
+Test case 16
+Your file matched the expected output
+                                                         [10/10]
++-----------------------------------------------------------------------+
+Test case 17
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Code quality
+Abstration:    
+Naming:        
+Formatting:    
+Documentation: 
+Comments from your grader:
+
+                                                         [/10]
++-----------------------------------------------------------------------+
+
+Overall Grade: 113

@@ -1,0 +1,40 @@
+#success
+universe.csv correlation.csv
+universe.csv correlation_math_4.csv
+universe_55.csv correlation_55.csv
+universe_66.csv correlation_66.csv
+universe_99.csv correlation_99.csv
+universe_zeroSd.csv correlation.csv
+-r universe.csv correlation.csv
+-r universe.csv correlation_math_4.csv
+-r universe_55.csv correlation_55.csv
+-r universe_66.csv correlation_66.csv
+-r universe_99.csv correlation_99.csv
+
+#error
+--r universe.csv correlation.csv
+universe.csv -r correlation.csv
+universe.csv correlation.csv -r
+
+universe.csv
+no_such_file.csv correlation.csv
+universe.csv no_such_file.csv
+universe_empty.csv correlation.csv
+universe.csv correlation_empty.csv
+universe.csv correlation_lack_row.csv
+universe.csv correlation_more_col.csv
+universe.csv correlation_math_1.csv
+universe.csv correlation_math_2.csv
+universe.csv correlation_math_3.csv
+universe.csv correlation_non_double.csv
+-r universe.csv
+-r no_such_file.csv correlation.csv
+-r universe.csv no_such_file.csv
+-r universe_empty.csv correlation.csv
+-r universe.csv correlation_empty.csv
+-r universe.csv correlation_lack_row.csv
+-r universe.csv correlation_more_col.csv
+-r universe.csv correlation_math_1.csv
+-r universe.csv correlation_math_2.csv
+-r universe.csv correlation_math_3.csv
+-r universe.csv correlation_non_double.csv

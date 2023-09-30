@@ -1,0 +1,113 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <map>
+#include<cstdlib>
+
+using namespace std;
+
+vector<string> parseLine(const string &line, const string &delim) {
+    vector<string> result;
+    size_t start = 0;
+    size_t end = line.find(delim);
+    while (end != string::npos) {
+        result.push_back(line.substr(start, end - start));
+        start = end + delim.length();
+        end = line.find(delim, start);
+    }
+    result.push_back(line.substr(start, end));
+    return result;
+}
+
+std::ifstream openFile(const std::string &name) {
+    ifstream in(name);
+    if (!in.is_open()) {
+        std::cerr << "Unable to open " << name << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    return in;
+}
+
+map<string, vector<string> > parse_words(ifstream &in) {
+    map<string, vector<string>> result; 
+    string line;
+    while (getline(in,line)) {
+        vector<string> split = parseLine(line,":");
+        if (split.size() != 2) {
+	  std::cerr << "Incorrect number of records on line: " << line << std::endl;
+            exit(EXIT_FAILURE);
+        }
+        if (result.count(split[0]) == 0) {
+            result.insert({split[0], vector<string>()});
+        }
+        result[split[0]].push_back(split[1]);
+    }
+    return result;
+}
+
+string join(vector<string> strings, string sep) {
+    string result;
+    for (const auto &s: strings) {
+        if (!result.empty())
+            result += sep;
+        result += s;
+    }
+    return result;
+}
+
+int convertStringToInt(const string s) {
+    try {
+        return stoi(s);
+    }
+    catch (const exception&) {
+        std::cerr << "Failure to convert string to int: "<< s << std::endl;
+	std::exit(EXIT_FAILURE);
+    }
+}
+
+int main(int argc, char *argv[]) {
+    if (argc != 4) {
+      std::cerr << "Usage: " << argv[0] << " template words seed" << std::endl;
+      std::exit(EXIT_FAILURE);
+    }
+    srand(convertStringToInt(argv[3]));
+
+    ifstream words_in = openFile(argv[2]);
+    map<string, vector<string>> words = parse_words(words_in);
+    words_in.close();
+
+    vector<string> substitutions;
+
+    std::ifstream template_in = openFile(argv[1]);
+    string line;
+    while (getline(template_in,line)) {
+        auto first_char = 0U;
+        auto start = line.find("_");
+        while (start != string::npos) {
+            auto end = line.find("_", start+1);
+            if (end == string::npos) {
+	      std::cerr << "No matching underscore: "<< line << std::endl;
+	      std::exit(EXIT_FAILURE); 
+            }
+	    std::cout << line.substr(first_char,start-first_char);
+            string category = line.substr(start+1, end - start-1);
+            if (words.count(category) == 1) {
+                string word = words[category][rand()%words[category].size()];
+                substitutions.push_back(word);
+		std::cout << word;
+            }
+            else {
+                string word = substitutions[substitutions.size()- convertStringToInt(category)];
+                substitutions.push_back(word);
+		std::cout << word;
+            }
+            first_char = end + 1;
+            start = line.find("_",first_char);
+        }
+	std::cout << line.substr(first_char,start) << std::endl;
+    }
+    
+    return EXIT_SUCCESS;
+}
