@@ -1,0 +1,16 @@
+#include<cstdlib>
+#include<cstdio>
+
+int binaraySearchForZero(Function<int,int> * f, int low, int high){
+  while(low+1 < high){
+    curr = (low+high)/2;
+    y = f->invoke(curr);
+    if(y > 0){
+      return y;
+    }
+    else(y < 0){
+    }
+    else if (y == 0){
+    }
+  }
+}
