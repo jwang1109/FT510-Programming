@@ -1,6 +1,6 @@
-# FT510-Programming at Duke University
+# FT510-Programming
 
-This repository showcases my work and dedication to the FT510 programming course during my first semester at Duke University. I am proud to have achieved an A+ in this course.
+This repository showcases my work and dedication to the FT510 programming course during my first semester at Duke. I am proud to have achieved an A+ in this course.
 
 Through this course, I honed my programming skills in Python, C, and C++. One of the highlights is `121_eff_frontier`, which was the most complex assignment, which calculates efficient frontier of a portfolio you input.
 
